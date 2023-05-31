@@ -3,12 +3,13 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class HW_form {
-
 
     @BeforeAll
 
@@ -17,7 +18,7 @@ public class HW_form {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
 
     }
     @Test
@@ -37,17 +38,21 @@ public class HW_form {
         // month
         $(".react-datepicker__month-select").selectOption("December");
 
+
         // year
         $(".react-datepicker__year-select").selectOption("1977");
 
+
         // date
-        $(".react-datepicker__day--027").click();
+        $(".react-datepicker__day--017").click();
+
+
 
         //  subject press b + enter
         $("#subjectsInput").setValue("b").pressEnter();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("122.png");
-        $("#currentAddress").setValue("Anithing");
+        $("#currentAddress").setValue("Anything");
 
         // state
         $("#state").click();
@@ -60,14 +65,14 @@ public class HW_form {
 
         // Проверка наличия окна с нужными значениями
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Ivan Popov"));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("aone@two.com"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("one@two.com"));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9031013947"));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("27 December,1977"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("17 December,1977"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Biology"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
-        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(""));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Anithing"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("122.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Anything"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
     }
 }
