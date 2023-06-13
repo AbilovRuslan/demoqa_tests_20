@@ -57,6 +57,7 @@ public class RegistrationPage {
         return this;
     }
 
+    
     public RegistrationPage currentAddress(String value) {
         $("#currentAddress").setValue(value).click();
         return this;
