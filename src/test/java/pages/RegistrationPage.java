@@ -1,5 +1,6 @@
 package pages;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -44,6 +45,11 @@ public class RegistrationPage {
 
     public RegistrationPage dateOfBirthInput(String day, String month, String year) {
         $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+        $(".react-datepicker__day--0" + day).click();
+        //$(".react-datepicker__day--0" + day +
+
         return this;
     }
 
@@ -57,14 +63,36 @@ public class RegistrationPage {
         return this;
     }
 
-    
+
     public RegistrationPage currentAddress(String value) {
         $("#currentAddress").setValue(value).click();
         return this;
     }
 
-     public RegistrationPage setState(String value) {
-        $("#selectState").setValue(value).pressEnter();
-       return this;
+    public RegistrationPage setState(String value) {
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText(value)).click();
+        return this;
     }
+
+    public RegistrationPage setCity(String value) {
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText(value)).click();
+        return this;
+    }
+
+    public void clickSubmit() {
+        $("#submit").click();
+    }
+
+    public RegistrationPage checkResult(String key, String value) {
+        $(".table-responsive").$(byText(key)).sibling(0).shouldHave(text(value));
+
+        return this;
+    }
+
+
+
+
+
 }

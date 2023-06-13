@@ -61,7 +61,7 @@ public class HW_form {
         //выбираем город
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
-                $("#submit").pressEnter();
+                    $("#submit").pressEnter();
 
         // Проверка наличия окна с нужными значениями
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Ivan Popov"));
