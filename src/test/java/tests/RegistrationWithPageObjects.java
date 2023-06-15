@@ -17,6 +17,7 @@ public class RegistrationWithPageObjects extends TestBase {
                 .setGender("Female")
                 .setuserNumber("9031013947")
                 .dateOfBirthInput("17", "December", "1977")
+                .subjectsInput("b")
                 .hobbiesWrapper("Music")
                 .uploadPicture("122.png")
                 .currentAddress("Anything")

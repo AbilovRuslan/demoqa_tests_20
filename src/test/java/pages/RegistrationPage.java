@@ -48,8 +48,11 @@ public class RegistrationPage {
         $(".react-datepicker__month-select").selectOption(month);
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__day--0" + day).click();
-        //$(".react-datepicker__day--0" + day +
+        return this;
+    }
 
+    public RegistrationPage subjectsInput (String value) {
+        $("#subjectsInput").setValue(value).pressEnter();
         return this;
     }
 
@@ -90,9 +93,4 @@ public class RegistrationPage {
 
         return this;
     }
-
-
-
-
-
 }
