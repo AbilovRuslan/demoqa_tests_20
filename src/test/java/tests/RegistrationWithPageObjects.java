@@ -12,10 +12,10 @@ public class RegistrationWithPageObjects extends TestBase {
         registrationPage.openFormRegistration()
                 .closeBanner()
                 .setName("Ivan")
-                .setlastName("Popov")
-                .setuserEmail("one@two.com")
+                .setLastName("Popov")
+                .setUserEmail("one@two.com")
                 .setGender("Female")
-                .setuserNumber("9031013947")
+                .setUserNumber("9031013947")
                 .dateOfBirthInput("17", "December", "1977")
                 .subjectsInput("b")
                 .hobbiesWrapper("Music")
@@ -24,6 +24,7 @@ public class RegistrationWithPageObjects extends TestBase {
                 .setState("NCR")
                 .setCity("Delhi")
                 .clickSubmit();
+
 
         registrationPage
                 .checkResult("Student Name", "Ivan Popov")

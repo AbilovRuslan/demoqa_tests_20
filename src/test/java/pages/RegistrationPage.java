@@ -23,17 +23,16 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setlastName(String lastName) {
-        $("#lastName").setValue(lastName);
+    public RegistrationPage setLastName(String LastName) {
+        $("#lastName").setValue(LastName);
+        return this;
+    }
+    public RegistrationPage setUserEmail(String mail) {
+        $("#userEmail").setValue(mail);
         return this;
     }
 
-    public RegistrationPage setuserEmail(String userEmail) {
-        $("#userEmail").setValue(userEmail);
-        return this;
-    }
-
-    public RegistrationPage setuserNumber(String userNumber) {
+    public RegistrationPage setUserNumber(String userNumber) {
         $("#userNumber").setValue(userNumber);
         return this;
     }
@@ -93,4 +92,7 @@ public class RegistrationPage {
 
         return this;
     }
+
+
+
 }
